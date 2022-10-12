@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import React, { useEffect, useState } from "react";
 import "../styles/App.css";
 
@@ -26,12 +26,14 @@ const App = () => {
   const [getNext,setNext] = useState(0)
 
   const fetchData = ()  =>{
-    axios.get('https://api.quotable.io/random')
-    .then((res)=>{
-      // console.log(res.data);
-      setData({
-        author:res.data.author,
-        quote:res.data.content,
+    fetch('https://api.quotable.io/random')
+    .then((r)=>{
+      r.json().then((res)=>{
+        console.log(res);
+        setData({
+          author:res.author,
+          quote:res.content,
+        })
       })
     })
     .catch((error)=>{
