@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
-// import "../styles/App.css";
-import "./styles.css"
+import "../styles/App.css";
+// import "./styles.css"
 
 var colors = [
   '#16a085',
