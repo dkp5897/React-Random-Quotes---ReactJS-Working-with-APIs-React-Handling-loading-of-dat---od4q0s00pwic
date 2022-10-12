@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from "react";
-import "../styles/App.css";
+// import "../styles/App.css";
+import "./styles.css"
 
 var colors = [
   '#16a085',
@@ -58,7 +59,7 @@ const App = () => {
           <div className='quote-author'>
             {getData.author}
           </div>
-          <button onClick={clickHandler}>next quote</button>
+          <button onClick={clickHandler} id='new-quote'>next quote</button>
         </div>
       </div>
     );
