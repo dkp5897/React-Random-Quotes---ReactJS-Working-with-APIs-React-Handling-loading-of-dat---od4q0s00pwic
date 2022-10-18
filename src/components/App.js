@@ -24,6 +24,8 @@ const App = () => {
     quote:'',
     author:''
   })
+  const [count,setCount] = useState(0)
+
   const [getNext,setNext] = useState(0)
 
   const fetchData = ()  =>{
@@ -48,15 +50,21 @@ const App = () => {
 
   const clickHandler = () =>{
     setNext(getNext + 1)
+    if(count<10){
+      setCount(count+1)
+    }
+    else{
+      setCount(0)
+    }
   }
 
     return (
       <div id="main">
         <div id="wrapper">
-          <div className='quote-text'>
+          <div className='quote-text' style={{color:colors[count]}} >
             {getData.quote}
           </div>
-          <div className='quote-author'>
+          <div className='quote-author' style={{color:colors[count]}}>
             {getData.author}
           </div>
           <button onClick={clickHandler} id='new-quote'>next quote</button>
